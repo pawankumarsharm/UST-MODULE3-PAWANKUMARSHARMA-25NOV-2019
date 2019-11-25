@@ -1,0 +1,11 @@
+package com.ustglobal.phone_simulatorapp.util;
+
+import com.ustglobal.phone_simulatorapp.dao.PhoneSimulatorDao;
+
+public class PhoneSimulatorManager {
+	private PhoneSimulatorManager() {}
+	
+	public static PhoneSimulatorDao getPhoneDAO() {
+		return new EmployeeDAOImpl();
+	}
+}

@@ -1,0 +1,18 @@
+package com.ustglobal.phone_simulatorapp.dao;
+
+import java.util.List;
+
+import com.ustglobal.phone_simulator.dto.PhoneSimulatorDto;
+
+public interface PhoneSimulatorDao {
+	public List<PhoneSimulatorDto> getALLEData() ;
+	public  PhoneSimulatorDto searchContact(String name);
+	public int insertPhoneData(PhoneSimulatorDto p1);
+	public int updatePhoneData(PhoneSimulatorDto p2);
+	public int deletePhoneData(int id);
+	public static PhoneSimulatorDao getPhoneDAO() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+}

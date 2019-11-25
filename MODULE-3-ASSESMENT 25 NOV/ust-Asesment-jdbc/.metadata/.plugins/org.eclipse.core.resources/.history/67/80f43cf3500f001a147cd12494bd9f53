@@ -1,0 +1,5 @@
+package com.ustglobal.phone_simulatorapp.dao;
+
+public class PhoneSimulatorJdbcDao {
+
+}

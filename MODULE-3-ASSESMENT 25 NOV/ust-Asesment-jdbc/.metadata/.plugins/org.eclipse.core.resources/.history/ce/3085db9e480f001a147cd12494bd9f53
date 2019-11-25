@@ -1,0 +1,7 @@
+package com.ustglobal.phone_simulator.dto;
+
+public class PhoneSimulatorDto {
+private String name;
+private long number;
+private String groups;
+}

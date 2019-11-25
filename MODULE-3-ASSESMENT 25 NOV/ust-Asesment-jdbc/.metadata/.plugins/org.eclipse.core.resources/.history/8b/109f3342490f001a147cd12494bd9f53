@@ -1,0 +1,11 @@
+package com.ustglobal.phone_simulatorapp.dao;
+
+import java.util.List;
+
+import com.ustglobal.phone_simulator.dto.PhoneSimulatorDto;
+
+public interface PhoneSimulatorDao {
+	public List<PhoneSimulatorDto> getALLEData() ;
+	public  searchContact(String name);
+	public int insertEmployeeData(PhoneSimulatorDto p);
+}

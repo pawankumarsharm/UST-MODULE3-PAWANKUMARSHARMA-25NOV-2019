@@ -1,0 +1,13 @@
+package com.ustglobal.phone_simulator;
+
+import java.util.Scanner;
+
+public class App {
+public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	int n=sc.nextInt();
+	System.out.println("Press 1 to show all contacts");
+	System.out.println("Press 2 to search for contacts");
+	System.out.println("Press 3 to operate on  contacts");
+}
+}

@@ -1,0 +1,22 @@
+package com.ustglobal.phone_simulatorapp.util;
+
+import java.util.List;
+
+import com.ustglobal.phone_simulator.dto.PhoneSimulatorDto;
+import com.ustglobal.phone_simulatorapp.dao.PhoneSimulatorDao;
+import com.ustglobal.phone_simulatorapp.dao.PhoneSimulatorJdbcDao;
+
+public class PhoneSimulatorManager {
+	private PhoneSimulatorManager() {}
+	
+	public static PhoneSimulatorDao getEmployeeDAO() {
+		return new PhoneSimulatorJdbcDao() {
+
+			@Override
+			public int insertPhoneData(PhoneSimulatorDto p1) {
+				// TODO Auto-generated method stub
+				return 0;
+			}
+			
+		
+}

@@ -1,0 +1,57 @@
+package com.ustglobal.phone_simulator;
+
+import java.util.Scanner;
+
+import com.ustglobal.phone_simulator.dto.PhoneSimulatorDto;
+import com.ustglobal.phone_simulatorapp.dao.PhoneSimulatorDao;
+import com.ustglobal.phone_simulatorapp.util.PhoneSimulatorManager;
+
+public class App {
+public static void main(String[] args) {
+	Scanner scn=new Scanner(System.in);
+	int n=scn.nextInt();
+	System.out.println("Press 1 to show all contacts");
+	System.out.println("Press 2 to search for contacts");
+	System.out.println("Press 3 to operate on  contacts");
+	
+	switch(n) {
+	case 1:
+		PhoneSimulatorDao dao2=PhoneSimulatorManager.getPhoneDAO();
+		int num1=scn.nextInt();
+		String name1=scn.next();
+		String group1=scn.next();
+		PhoneSimulatorDto bean1=new PhoneSimulatorDto();
+		bean1.setName(name1);
+		bean1.setNumber(num1);
+		bean1.setGroups(group1);
+		
+		int res=dao2.insertPhoneData(bean1);
+		System.out.println(res+"Row(s) inserted");
+		break;
+	
+	case 3:
+		EmployeeDAO dao3=EmployeeManager.getEmployeeDAO();
+		int id2=scn.nextInt();
+		String name2=scn.next();
+		int sal2=scn.nextInt();
+		String gender2=scn.next();
+		EmployeeBean bean2=new EmployeeBean();
+		bean2.setId(id2);
+		bean2.setName(name2);
+		bean2.setSal(sal2);
+		bean2.setGender(gender2);
+		
+		int res2=dao3.updateEmployeeData(bean2);
+		System.out.println(res2+"Row(s) inserted");
+		break;
+		
+	case 4:
+		PhoneSimulatorDao dao4=PhoneSimulatorDao.get;
+		int id3=scn.nextInt();
+		int res3=dao4.deleteEmployeeData(id3);
+		System.out.println(res3+"Row(s) deleted");
+		break;
+		
+	}
+}
+}

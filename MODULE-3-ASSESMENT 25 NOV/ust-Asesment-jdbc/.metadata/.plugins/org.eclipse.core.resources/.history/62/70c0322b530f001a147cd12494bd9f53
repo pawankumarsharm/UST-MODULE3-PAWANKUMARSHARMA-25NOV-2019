@@ -1,0 +1,70 @@
+package com.ustglobal.phone_simulator;
+
+import java.util.Scanner;
+
+import com.ustglobal.phone_simulator.dto.PhoneSimulatorDto;
+import com.ustglobal.phone_simulatorapp.dao.PhoneSimulatorDao;
+import com.ustglobal.phone_simulatorapp.util.PhoneSimulatorManager;
+
+public class App {
+public static void main(String[] args) {
+	Scanner scn=new Scanner(System.in);
+	int n=scn.nextInt();
+	System.out.println("Press 1 to search for contacts ");
+	System.out.println("Press 2 to show all contacts ");
+	System.out.println("Press 3 to operate on  contacts");
+	
+	switch(n) {
+	case 1:
+		PhoneSimulatorDao dao5=PhoneSimulatorManager.getEmployeeDAO();
+	System.out.println("Enter the name");
+	String name1=scn.next();
+	PhoneSimulatorDao bean=(PhoneSimulatorDao) dao5.searchContact(name1);
+	if(bean!=null) {
+		System.out.println("Name is:"+((PhoneSimulatorDto) bean).getName());
+		System.out.println("Number is:-"+((PhoneSimulatorDto) bean).getNumber());
+		System.out.println("Groups is:"+((PhoneSimulatorDto) bean).getGroups());
+	}
+	else {
+		System.out.println("contact not  found");
+	}
+	break;
+
+	case 2:
+		PhoneSimulatorDao dao2=PhoneSimulatorManager.getEmployeeDAO();
+		int num2=scn.nextInt();
+		String name2=scn.next();
+		String group2=scn.next();
+		PhoneSimulatorDto bean1=new PhoneSimulatorDto();
+		bean1.setName(name2);
+		bean1.setNumber(num2);
+		bean1.setGroups(group2);
+		
+		int res=dao2.insertPhoneData(bean1);
+		System.out.println(res+"Row(s) inserted");
+		break;
+	
+	case 3:
+		PhoneSimulatorDao dao3=PhoneSimulatorDao.getPhoneDAO();
+		int num3=scn.nextInt();
+		String name3=scn.next();
+		String group3=scn.next();
+		PhoneSimulatorDto bean2=new PhoneSimulatorDto();
+		bean2.setNumber(num3);
+		bean2.setName(name3);
+		bean2.setGroups(group3);
+		
+		int res2=dao3.updatePhoneData(bean2);
+		System.out.println(res2+"Row(s) inserted");
+		break;
+		
+	case 4:
+		PhoneSimulatorDao dao4=PhoneSimulatorDao.getPhoneDAO();
+		String name4=scn.next();
+		int res3=dao4.deletePhoneData(name4);
+		System.out.println(res3+"Row(s) deleted");
+		break;
+		
+	}
+}
+}
